@@ -1,2 +1,5 @@
-# DsGuys
-Data Structure and Algorithms
+# Design Patterns
+
+# Data Structure and Algorithms
+
+# Clean Code
