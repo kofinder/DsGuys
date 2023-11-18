@@ -12,7 +12,7 @@
     * We make a copy(clone) the prototype and customize it Requries 'deep copy' support
     * we make the cloning convenient (eg., via a factory)
 
-#Summary
+# Summary
     * To implement a prototype, partially construct an object and store it somewhere
     * Clone the prototype
         - implements your own deep copy functionality, 
