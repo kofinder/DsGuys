@@ -14,7 +14,6 @@
 - Don't put too much function into an interface; split into seperate interface
 - YAGIN - You Ain't Going to Need It
 
-
 # Why we need SOLID or its benefits
 - Better Testability
 - Reduces coupling

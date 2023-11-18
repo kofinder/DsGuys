@@ -1,5 +1,7 @@
 package design_patterns.prototype;
 
+
+
 class Address implements Cloneable {
     public String street;
     public String houseNo;
@@ -18,10 +20,9 @@ class Address implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Object clone() {
         return new Address(street, houseNo);
     }
-
 }
 
 
@@ -44,15 +45,16 @@ class Person implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Object clone() {
         return new Person(name, (Address) address.clone());
     }
 }
  
-public class Demo {
-    public static void main(String[] args) throws Exception {
+public class CloneAbleDemo {
+    public static void main(String[] args) {
         Person theinlwin = new Person("Theinliwn", new Address("Yangon", "No.32"));
-        Person jovian = (Person) theinlwin.clone();
+
+        Person jovian = (Person) theinlwin.clone(); // shallow copy
         jovian.name = "Jovian";
         jovian.address.houseNo = "No.40";
        
