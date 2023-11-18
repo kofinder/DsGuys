@@ -1,6 +1,7 @@
 # Prototype
+    * creational design pattern that lets you copy existing objects without making your code dependent on their classes
     * A partially or fullly initialized object that you copy(clone) and make use of.
-    * Shallow copy—
+    * Shallow copy
         * Only fields of the primitive data type will be copied. All references are not copied.
         * the pointer points to the same copy of objects of class.
     * Deep copy
