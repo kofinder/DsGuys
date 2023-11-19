@@ -74,7 +74,7 @@ class LineToPointAdapter extends ArrayList<Point> {
     }
 }
 
-public class NocachingDemo {
+public class LineToPointAdoionNocachingDemo {
     private static final List<VectorObject> vectorObjects = new ArrayList<>(
             Arrays.asList(
                     new VectorRectangle(1, 1, 10, 10),
@@ -88,7 +88,7 @@ public class NocachingDemo {
         for (VectorObject vo : vectorObjects) {
             for (Line line : vo) {
                 LineToPointAdapter adapter = new LineToPointAdapter(line);
-                adapter.forEach(NocachingDemo::drawPoint);
+                adapter.forEach(LineToPointAdoionNocachingDemo::drawPoint);
             }
         }
     }

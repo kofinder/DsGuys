@@ -135,7 +135,7 @@ class LineToPointAdapter implements Iterable<Point> {
     }
 }
 
-class CachingDemo {
+class LineToPointAdoptionCachingDemo {
     private static final List<VectorObject> vectorObjects = new ArrayList<>(Arrays.asList(
             new VectorRectangle(1, 1, 10, 10),
             new VectorRectangle(3, 3, 6, 6)));

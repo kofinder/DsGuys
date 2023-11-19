@@ -8,5 +8,7 @@
     * Create a component which aggregates (has a reference to,..)  the adapte
     * Intermediate representations can pile up: use caching and other optimizations
     * Adapter design pattern is one of the structural design pattern and its used so that two unrelated interfaces can work together. The object that joins these unrelated interface is called an Adapter.
+    * An Adapter pattern acts as a connector between two incompatible interfaces that otherwise cannot be connected directly. An Adapter wraps an existing class with a new interface so that it becomes compatible with the client’s interface.
+
 
 
