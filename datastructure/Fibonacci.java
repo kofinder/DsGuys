@@ -10,7 +10,7 @@ public class Fibonacci {
         return calculate(num - 1) + calculate(num - 2);
     }
     public static void main(String[] args) {
-        int result = calculate(8);
+        int result = calculate(7);
         System.out.println("Your Fibonacci result is: "+ result);
     }
 }
