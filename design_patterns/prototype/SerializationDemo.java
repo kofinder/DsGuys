@@ -21,9 +21,9 @@ public class SerializationDemo {
     public static void main(String[] args) {
         Beverage beverage = new Beverage("Cocacola 330ml", "can");
         // use apache common
-        Beverage beverage2 = SerializationUtils.roundtrip(beverage);
-        beverage2.packageType = "bottle";
+        // Beverage beverage2 = SerializationUtils.roundtrip(beverage);
+        // beverage2.packageType = "bottle";
         System.out.println(beverage);
-        System.out.println(beverage2);
+        // System.out.println(beverage2);
     }
 }

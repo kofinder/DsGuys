@@ -32,16 +32,13 @@ class Journal {
  * InnerSRP
  */
 class Persistance {
-    public void save(Journal journal) {
-        // TODO
+    void save(Journal journal) {
     } 
     
-    public void load(Journal journal, String filename) {
-        // TODO
+    void load(Journal journal, String filename) {
     }
 
-    public void load(Journal journal, URL url) {
-        // TODO
+    void load(Journal journal, URL url) {
     }
 }
 
