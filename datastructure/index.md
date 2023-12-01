@@ -6,8 +6,6 @@
 - Recursive growth rate
 - Logrithmic Growth Rate
 - Cubic Growth Rate
-- Cubic Growth Rate
-
 
 # Omega(Ω) Notation
 - give the tigher lower bound of a given algorithm

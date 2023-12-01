@@ -12,5 +12,9 @@
 # Grredy Algoirthm
 
 # Divide & Conquer Algoirthm
+1) Divide: This involves dividing the problem into smaller sub-problems.
+2) Conquer: Solve sub-problems by calling recursively until solved.
+3) Combine: Combine the sub-problems to get the final solution of the whole problem.
+
 
 # Dynamic Programming

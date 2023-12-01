@@ -1,19 +1,28 @@
 package codility.stack_and_queue;
+import java.util.*;
 
 
 public class Fish {
 
-    static int solution(int[] A, int[] B) {
-        int aliveFish = 0;
-        return aliveFish;
+    static int solution(int[] A) {
+            Arrays.sort(A);
+    
+            int smallest = 1;
+    
+            for(int num: A) {
+                if(num == smallest) {
+                    smallest++;
+                }
+            }
+    
+            return smallest;
     }
 
 
     public static void main(String[] args) {
-        int[] A = {4, 3, 2, 1, 5};
-        int[] B = {0, 1, 0, 1, 0};
+        int[] A = { 3, 2, 1 };
 
-        System.out.println("Result: " + solution(A, B));
+        System.out.println("Result: " + solution(A));
 
     }
 }

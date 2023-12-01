@@ -3,10 +3,10 @@ package design_patterns.adaptor;
 import java.util.*;
 import java.util.function.Consumer;
 
-class Point {
+class NPoint {
     public int x, y;
 
-    public Point(int x, int y) {
+    public NPoint(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -18,7 +18,7 @@ class Point {
         if (o == null || getClass() != o.getClass())
             return false;
 
-        Point point = (Point) o;
+        NPoint point = (NPoint) o;
 
         if (x != point.x)
             return false;
@@ -42,9 +42,9 @@ class Point {
 }
 
 class Line {
-    public Point start, end;
+    public NPoint start, end;
 
-    public Line(Point start, Point end) {
+    public Line(NPoint start, NPoint end) {
         this.start = start;
         this.end = end;
     }
@@ -76,16 +76,16 @@ class VectorObject extends ArrayList<Line> {
 
 class VectorRectangle extends VectorObject {
     public VectorRectangle(int x, int y, int width, int height) {
-        add(new Line(new Point(x, y), new Point(x + width, y)));
-        add(new Line(new Point(x + width, y), new Point(x + width, y + height)));
-        add(new Line(new Point(x, y), new Point(x, y + height)));
-        add(new Line(new Point(x, y + height), new Point(x + width, y + height)));
+        add(new Line(new NPoint(x, y), new NPoint(x + width, y)));
+        add(new Line(new NPoint(x + width, y), new NPoint(x + width, y + height)));
+        add(new Line(new NPoint(x, y), new NPoint(x, y + height)));
+        add(new Line(new NPoint(x, y + height), new NPoint(x + width, y + height)));
     }
 }
 
-class LineToPointAdapter implements Iterable<Point> {
+class LineToPointAdapter implements Iterable<NPoint> {
     private static int count = 0;
-    private static Map<Integer, List<Point>> cache = new HashMap<>();
+    private static Map<Integer, List<NPoint>> cache = new HashMap<>();
     private int hash;
 
     public LineToPointAdapter(Line line) {
@@ -97,7 +97,7 @@ class LineToPointAdapter implements Iterable<Point> {
                 String.format("%d: Generating points for line [%d,%d]-[%d,%d] (no caching)",
                         ++count, line.start.x, line.start.y, line.end.x, line.end.y));
 
-        ArrayList<Point> points = new ArrayList<>();
+        ArrayList<NPoint> points = new ArrayList<>();
 
         int left = Math.min(line.start.x, line.end.x);
         int right = Math.max(line.start.x, line.end.x);
@@ -108,11 +108,11 @@ class LineToPointAdapter implements Iterable<Point> {
 
         if (dx == 0) {
             for (int y = top; y <= bottom; ++y) {
-                points.add(new Point(left, y));
+                points.add(new NPoint(left, y));
             }
         } else if (dy == 0) {
             for (int x = left; x <= right; ++x) {
-                points.add(new Point(x, top));
+                points.add(new NPoint(x, top));
             }
         }
 
@@ -120,17 +120,17 @@ class LineToPointAdapter implements Iterable<Point> {
     }
 
     @Override
-    public Iterator<Point> iterator() {
+    public Iterator<NPoint> iterator() {
         return cache.get(hash).iterator();
     }
 
     @Override
-    public void forEach(Consumer<? super Point> action) {
+    public void forEach(Consumer<? super NPoint> action) {
         cache.get(hash).forEach(action);
     }
 
     @Override
-    public Spliterator<Point> spliterator() {
+    public Spliterator<NPoint> spliterator() {
         return cache.get(hash).spliterator();
     }
 }
@@ -140,7 +140,7 @@ class LineToPointAdoptionCachingDemo {
             new VectorRectangle(1, 1, 10, 10),
             new VectorRectangle(3, 3, 6, 6)));
 
-    public static void drawPoint(Point p) {
+    public static void drawPoint(NPoint p) {
         System.out.print(".");
     }
 
