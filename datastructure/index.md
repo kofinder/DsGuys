@@ -34,5 +34,5 @@
     - decides whether upper bound and lower bound of a given algorithm are same or not.
     - we can say that for any given input, running time of a given algorithm will 'on an average' be equal to given time.
 
-# Refrence
+# Refrences
     - https://cathyatseneca.gitbooks.io/data-structures-and-algorithms/content/analysis/growth.html

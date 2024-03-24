@@ -1,6 +1,7 @@
 # Design Patterns
 
-# Data Structure and Algorithms
+# Data Structure
+
+# Algorithms
 
 # Clean Code
-
