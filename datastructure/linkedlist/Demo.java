@@ -1,14 +1,18 @@
 package datastructure.linkedlist;
 
 public class Demo {
+
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList(0);
-        linkedList.append(1);
-        linkedList.prepend(2);
-        linkedList.append(3);
-        linkedList.prepend(4);
-        linkedList.append(5);
-        linkedList.prepend(6);
-        linkedList.remove(2);
+
+        LinkedList myLinkedList = new LinkedList(1);
+        myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+
+        int k = 2;
+        int result = myLinkedList.findKthFromEnd(k).value;
+
+        System.out.println(result); // Output: 4
     }
 }
